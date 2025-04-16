@@ -1,10 +1,11 @@
 import streamlit as st
-from openai import OpenAI
+import openai
 import os
 import time
 import base64
 # Pull the API key securely from Streamlit secrets
-client = OpenAI(api_key=st.secrets["openai_api_key"])
+#client = OpenAI(api_key=st.secrets["openai_api_key"])
+openai.api_key = st.secrets["openai_api_key"]
 # Set up Streamlit
 st.set_page_config(page_title="CodeCraft AI", layout="wide")
 st.title("💻 CodeCraft AI - Your Dev Partner")
@@ -45,7 +46,7 @@ if st.button("🚀 Generate Code"):
             prompt = prompt_templates[language].format(query=user_input)
 
             st.session_state.messages.append({"role": "user", "content": prompt})
-            response = client.chat.completions.create(
+            response = openai.ChatCompletions.create(
                 model="gpt-3.5-turbo",
                 messages=[
                     {"role": "system", "content": f"You are a helpful assistant that writes and revises {language} code."},
