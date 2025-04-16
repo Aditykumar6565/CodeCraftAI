@@ -5,7 +5,7 @@ import time
 import base64
 # Pull the API key securely from Streamlit secrets
 #client = OpenAI(api_key=st.secrets["openai_api_key"])
-openai.api_key = st.secrets["openai_api_key"]
+openai.api_key = st.secrets["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"]
 # Set up Streamlit
 st.set_page_config(page_title="CodeCraft AI", layout="wide")
 st.title("💻 CodeCraft AI - Your Dev Partner")
