@@ -3,10 +3,8 @@ from openai import OpenAI
 import os
 import time
 import base64
-
-# Replace with your own key securely
-client = OpenAI(api_key="openai_api_key")
-
+# Pull the API key securely from Streamlit secrets
+client = OpenAI(api_key=st.secrets["openai_api_key"])
 # Set up Streamlit
 st.set_page_config(page_title="CodeCraft AI", layout="wide")
 st.title("💻 CodeCraft AI - Your Dev Partner")
