@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # CodeCraft AI 🧠💻
 
 An AI Developer Assistant that generates and refines SQL, Python, HTML, CSS, and JavaScript code using OpenAI. Built with Streamlit.
